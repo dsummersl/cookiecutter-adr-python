@@ -10,7 +10,7 @@ on:
 
 
 jobs:
-  lint-and-test:
+  test-cookiecutter:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,4 +26,7 @@ jobs:
         run: pip install uv
 
       - name: Test cookiecutter
-        run: ./scripts/test_cookiecutter.sh
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          ./scripts/test_cookiecutter.sh
