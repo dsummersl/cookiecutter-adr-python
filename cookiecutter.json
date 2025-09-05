@@ -1,0 +1,13 @@
+{
+"project_name": "Awesome Project",
+"project_slug": "awesome-project",
+"package_name": "awesome_project",
+"description": "Short project description.",
+"author_name": "Your Name",
+"author_email": "you@example.com",
+"license": ["MIT", "Apache-2.0", "BSD-3-Clause", "Proprietary"],
+"python_version": "3.12",
+"use_precommit": "y",
+"init_git": "y",
+"init_adr": "y"
+}
