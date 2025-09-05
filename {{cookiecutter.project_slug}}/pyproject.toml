@@ -26,7 +26,7 @@ Homepage = "https://github.com/your-org/{{ cookiecutter.project_slug }}"
 # `uv sync` installs these by default; use `uv sync --group dev` as needed
 dev = [
 "pytest>=8",
-"pytest-cov>=5",
+"pytest-cov>=6",
 "ruff>=0.5",
 "mypy>=1.10",
 "pre-commit>=3.7",
