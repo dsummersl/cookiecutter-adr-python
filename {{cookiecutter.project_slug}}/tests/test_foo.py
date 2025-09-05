@@ -1,4 +1,4 @@
-from src.foo import bar
+from {{cookiecutter.package_name}}.foo import bar
 
 
 def test_bar():

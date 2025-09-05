@@ -1,0 +1,14 @@
+{
+  "project_name": "Project",
+  "project_slug": "project",
+  "package_name": "project",
+  "author_name": "Dane Summers",
+  "author_email": "dsummersl@gmail.com",
+  "license": [
+    "Apache-2.0",
+    "MIT",
+    "Proprietary"
+  ],
+  "python_version": "3.11",
+  "init_git": "y"
+}

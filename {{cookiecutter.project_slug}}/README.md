@@ -1,11 +1,9 @@
 # {{ cookiecutter.project_name }}
 
-{{ cookiecutter.description }}
-
 ## Dev setup
 
 ```bash
-uv sync
+make setup
 make test
 ```
 

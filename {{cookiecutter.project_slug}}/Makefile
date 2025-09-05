@@ -3,7 +3,6 @@
 setup:
 	uv venv
 	uv sync --python .venv/bin/python
-	. .venv/bin/activate
 
 test:
 	uv run pytest
@@ -16,4 +15,3 @@ fix:
 
 type:
 	uv run mypy
-
