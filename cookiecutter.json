@@ -1,7 +1,7 @@
 {
-  "project_name": "Project",
-  "project_slug": "project",
-  "package_name": "project",
+  "project_name": "Project Alpha",
+  "project_slug": "project-alpha",
+  "package_name": "project_alpha",
   "author_name": "Dane Summers",
   "author_email": "dsummersl@gmail.com",
   "license": [
@@ -9,6 +9,5 @@
     "MIT",
     "Proprietary"
   ],
-  "python_version": "3.11",
-  "init_git": "y"
+  "python_version": "3.11"
 }
