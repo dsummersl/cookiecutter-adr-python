@@ -1,8 +1,3 @@
-[build-system]
-requires = ["hatchling>=1.25.0"]
-build-backend = "hatchling.build"
-
-
 [project]
 name = "{{ cookiecutter.project_slug }}"
 version = "0.1.0"
@@ -16,10 +11,6 @@ classifiers = [
 "License :: OSI Approved",
 "Typing :: Typed",
 ]
-
-
-[project.urls]
-Homepage = "https://github.com/your-org/{{ cookiecutter.project_slug }}"
 
 [dependency-groups]
 dev = [
@@ -38,9 +29,6 @@ exclude = [".venv", ".git", "build", "dist"]
 python_version = "{{ cookiecutter.python_version }}"
 strict = true
 packages = ["{{ cookiecutter.package_name }}"]
-
-[tool.hatch.build.targets.sdist]
-include = ["{{cookiecutter.package_name}}/**", "README.md", "pyproject.toml", "LICENSE"]
 
 [tool.pytest.ini_options]
 addopts = "--cov={{cookiecutter.package_name}}"
