@@ -5,7 +5,7 @@
 let g:gutentags_ctags_exclude += ['*/.venv/*']
 let g:projectionist_heuristics = {
       \ 'pyproject.toml': {
-      \   '*.py': {
+      \   '{{ cookiecutter.package_name }}/*.py': {
       \     'type': 'function',
       \     'alternate': [
       \       'tests/{dirname}test_{basename}.py',
