@@ -15,8 +15,8 @@ let g:projectionist_heuristics = {
       \   'tests/**/test_*.py': {
       \     'type': 'test',
       \     'alternate': [
-      \       '{dirname}{basename}.py',
-      \       '{dirname}/{basename}.py',
+      \       '{{ cookiecutter.package_name }}/{dirname}{basename}.py',
+      \       '{{ cookiecutter.package_name }}/{dirname}/{basename}.py',
       \     ]
       \   },
       \ },
