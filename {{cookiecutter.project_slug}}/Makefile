@@ -15,3 +15,8 @@ fix:
 
 type:
 	uv run mypy
+
+radon:
+	uv run .github/scripts/check_radon.sh
+
+ci: @lint @type @test @radon
