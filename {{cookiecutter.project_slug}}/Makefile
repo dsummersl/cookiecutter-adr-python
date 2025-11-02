@@ -19,4 +19,4 @@ type:
 radon:
 	uv run .github/scripts/check_radon.sh
 
-ci: @lint @type @test @radon
+ci: test lint type radon
