@@ -19,4 +19,7 @@ type:
 radon:
 	uv run .github/scripts/check_radon.sh
 
-ci: test lint type radon
+treepeat:
+	uv run treepeat detect .
+
+ci: test lint type radon treepeat
