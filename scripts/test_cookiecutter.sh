@@ -13,4 +13,4 @@ uvx cookiecutter --no-input .
 cd project-alpha
 
 make setup
-make test
+make ci
