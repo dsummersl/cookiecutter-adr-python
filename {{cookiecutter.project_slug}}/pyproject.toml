@@ -27,9 +27,13 @@ dev = [
 line-length = 100
 exclude = [".venv", ".git", "build", "dist"]
 lint.select = [
-    "E",    # pycodestyle errors
+    "E",    # pycodestyle
     "F",    # Pyflakes
     "I",    # isort (automatically sorts and moves imports to top)
+    "B",    # flake8-bugbear (find likely bugs and design problems in your program)
+    "PLR",  # Pylint Refactor (specifically catches misplaced imports)
+    "PLC",  # Pylint Convention (specifically catches imports not at the top of the file)
+    "TID",  # Tidy imports
 ]
 
 [tool.mypy]
