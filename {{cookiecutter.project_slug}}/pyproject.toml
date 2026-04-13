@@ -26,6 +26,11 @@ dev = [
 [tool.ruff]
 line-length = 100
 exclude = [".venv", ".git", "build", "dist"]
+lint.select = [
+    "E",    # pycodestyle errors
+    "F",    # Pyflakes
+    "I",    # isort (automatically sorts and moves imports to top)
+]
 
 [tool.mypy]
 python_version = "{{ cookiecutter.python_version }}"
