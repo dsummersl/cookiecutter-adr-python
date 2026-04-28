@@ -1,4 +1,4 @@
-.PHONY: help setup test lint type adr new coverage
+.PHONY: setup test lint type adr new coverage vulture fix radon treepeat ci
 
 setup:
 	uv venv
@@ -9,6 +9,9 @@ test:
 
 lint:
 	uv run ruff check .
+
+vulture:
+	uv run vulture --min-confidence 55 {{ cookiecutter.package_name }}
 
 fix:
 	uv run ruff check . --fix
@@ -22,4 +25,4 @@ radon:
 treepeat:
 	uv run treepeat detect .
 
-ci: test lint type radon treepeat
+ci: test lint type radon treepeat vulture
