@@ -18,8 +18,8 @@ make setup  # Set up venv and sync dependencies with uv
 ### Testing
 ```bash
 make test                                    # Run all tests with pytest and coverage
-uv run pytest tests/test_foo.py             # Run specific test file
-uv run pytest tests/test_foo.py::test_name  # Run specific test
+uv run pytest tests/test_hello.py             # Run specific test file
+uv run pytest tests/test_hello.py::test_name  # Run specific test
 uv run pytest -v                             # Verbose output
 ```
 
