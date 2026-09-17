@@ -20,6 +20,7 @@ dev = [
   "radon>=6.0.1",
   "treepeat>=0.8.0",
   "vulture>=2.16",
+  "ast-grep-cli>=0.39.0",
 ]
 
 [tool.ruff]
@@ -27,6 +28,7 @@ line-length = 100
 exclude = [".venv", ".git", "build", "dist"]
 lint.select = [
   "E",   # pycodestyle
+  "W",   # pycodestyle warnings (trailing/blank-line whitespace, auto-fixed after ast-grep removals)
   "F",   # Pyflakes
   "I",   # isort (automatically sorts and moves imports to top)
   "B",   # flake8-bugbear (find likely bugs and design problems in your program)
