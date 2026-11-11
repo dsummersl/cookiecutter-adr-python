@@ -30,18 +30,17 @@ project-root/
 ### Working with coding agents (and humans)
 
 Much of the code in this project is configured to make working with LLM coding agents easier (and humans too!).
-Agents often produce a common problems (stray comments, dead code, near-duplicate code, imports buried inside functions, sprawling functions), so tooling is chosen to catch at CI time:
+Agents often produce a common problems (stray comments, dead code, near-duplicate code, imports buried inside functions, sprawling functions), so tooling and style is chosen to catch at CI time:
 
-- **No comments or docstrings** ([ast-grep](https://ast-grep.github.io/) rules in `.ast-grep/rules/`).
+- **Minimal comments and no docstrings** ([ast-grep](https://ast-grep.github.io/) rules in `.ast-grep/rules/`).
   Code is expected to be self-documenting. `make lint` flags them and `make fix` strips them. Motivated by
   [Inside Out: Uncovering How Comment Internalization Steers LLMs for Better or Worse](https://arxiv.org/pdf/2512.16790),
   which shows LLMs lean heavily on comments and that this steers their output in
-  unpredictable, model- and task-dependent ways. A small allowlist for exceptional cases: 
+  unpredictable, model- and task-dependent ways. Fewer comments also means less context overall. A small allowlist for exceptional cases: 
   `# noqa`, `# type: ignore`, `# pragma`, and `# WHY:` prefixed comments.
-- **Dead code is rejected immediately** ([vulture](https://github.com/jendrikseipp/vulture)). Unused code is not allowed by default.
-  Agents tend to leave behind unused functions, arguments, and variables; vulture fails CI
-  on them so they are removed in the same change that created them.
-- **Duplicate code is surfaced** ([treepeat](https://github.com/dsummersl/treepeat)). `make treepeat` lets us find and refactor duplicate/similar code. It is advisory (not part of `make ci`); run it when looking for refactors. We expect to lower the `--similarity` threshold (default 100, exact matches only) as the project grows, to catch near-duplicates more aggressively.
+- **No dead code** ([vulture](https://github.com/jendrikseipp/vulture)). Unused code is not allowed by default.
+  Agents tend to leave behind unused functions, arguments, and variables (so do humans of course!).
+- **Duplicate code is detected** ([treepeat](https://github.com/dsummersl/treepeat)). `make treepeat` lets us find and refactor duplicate/similar code. It is advisory (not part of `make ci`); run it when looking for refactors. We expect to lower the `--similarity` threshold (default 100, exact matches only) as the project grows, to catch near-duplicates more aggressively.
 - **Keep imports at the top of the file** (ruff `B`, `PLR`, `PLC`, `TID` rule sets).
   Agents often add imports inside the function that needs them; prevent it.
 - **Size and complexity limits** ([radon](https://radon.readthedocs.io/) via
@@ -50,4 +49,4 @@ Agents often produce a common problems (stray comments, dead code, near-duplicat
 
 ## Consequences
 
-What becomes easier or more difficult to do and any risks introduced by the change that will need to be mitigated.
+> What becomes easier or more difficult to do and any risks introduced by the change that will need to be mitigated.
